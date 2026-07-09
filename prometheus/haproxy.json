@@ -4362,7 +4362,7 @@
               "editorMode": "code",
               "expr": "rate(haproxy_frontend_sessions_total{proxy=~\"$frontend\",instance=\"$host\"}[$__rate_interval])",
               "interval": "$interval",
-              "legendFormat": "Total {{ proxy }}",
+              "legendFormat": "Accepted {{ proxy }}",
               "metric": "",
               "range": true,
               "refId": "A"
@@ -4379,20 +4379,6 @@
               "metric": "",
               "range": true,
               "refId": "B"
-            },
-            {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
-              },
-              "editorMode": "code",
-              "expr": "haproxy_frontend_current_sessions{proxy=~\"$frontend\",instance=\"$host\"}",
-              "hide": true,
-              "interval": "$interval",
-              "legendFormat": "Current active {{ proxy }}",
-              "metric": "",
-              "range": true,
-              "refId": "C"
             }
           ],
           "title": "Front - Sessions",
