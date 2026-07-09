@@ -5129,6 +5129,19 @@
               "metric": "",
               "range": true,
               "refId": "B"
+            },
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "${DS_PROMETHEUS}"
+              },
+              "editorMode": "code",
+              "expr": "haproxy_server_current_sessions{proxy=~\"$backend\",server=~\"$server\",instance=\"$host\"}",
+              "hide": true,
+              "interval": "$interval",
+              "legendFormat": "Current active {{ proxy }} / {{ server }}",
+              "range": true,
+              "refId": "C"
             }
           ],
           "title": "Server - Sessions Max",
